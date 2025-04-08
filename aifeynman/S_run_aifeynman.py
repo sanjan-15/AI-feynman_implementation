@@ -68,7 +68,7 @@ def run_AI_all(pathdir,filename,BF_try_time=60,BF_ops_file_type="14ops", polyfit
         model_feynman = NN_eval(pathdir,filename)[1]
     elif path.exists("results/NN_trained_models/models/" + filename + "_pretrained.h5"):
         print("Found pretrained NN \n")
-        model_feynman = NN_train(pathdir,filename,NN_epochs/2,lrs=1e-3,N_red_lr=3,pretrained_path="results/NN_trained_models/models/" + filename + "_pretrained.h5")
+        model_feynman = NN_train(pathdir,filename,NN_epochs//2,lrs=1e-3,N_red_lr=3,pretrained_path="results/NN_trained_models/models/" + filename + "_pretrained.h5")
         print("NN loss after training: ", NN_eval(pathdir,filename), "\n")
     else:
         print("Training a NN on the data... \n")
